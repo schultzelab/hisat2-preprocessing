@@ -184,6 +184,7 @@ rule hisat2:
     params:
         idx=indexstem,
         extra="--new-summary"
+        rna-strandness=config['rna-strandness']
     threads: 8
     wrapper:
         "0.27.1/bio/hisat2"
