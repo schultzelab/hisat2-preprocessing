@@ -183,8 +183,8 @@ rule hisat2:
         "logs/hisat2/{sample}.log"
     params:
         idx=indexstem,
-        extra="--new-summary"
-        rna-strandness=config['rna-strandness']
+        extra="--new-summary",
+        rnastrandness=config['rnastrandness']
     threads: 8
     wrapper:
         "0.27.1/bio/hisat2"
