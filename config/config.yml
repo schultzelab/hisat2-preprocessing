@@ -10,7 +10,7 @@ metadir: "/meta"
 # gtf: ""
 
 # single end, forward stranded
-rna-strandness: "-rna-strandness F" 
+rnastrandness: "-rna-strandness F" 
 
 # mode: "auto"
 
