@@ -284,10 +284,11 @@ rule rseqc:
         bed=bedfile
     output:
         "qc/rseqc/{sample}.rseqc.txt"
+    log:
+        "qc/rseqc/{sample}.rseqc.log"
     shell:
         # see https://snakemake.readthedocs.io/en/stable/project_info/faq.html#my-shell-command-fails-with-with-errors-about-an-unbound-variable-what-s-wrong
         """
-        set +u; source /usr/local/envs/rseqc/bin/activate; set -u
-        source activate rseqc
+        set -x; set +u; source activate rseqc; set -u
         read_distribution.py -i {input.bam} -r {input.bed} > {output}
         """
