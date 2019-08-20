@@ -75,7 +75,7 @@ rule htseq:
     log:
         "logs/htseq/{sample}.log"
     shell:
-        """htseq-count --order=pos --format=bam \
+        """htseq-count --order=pos --format=bam --stranded reverse --additional-attr gene_name \
         {input.bam} {input.gtf} > {output} 2> {log}"""
 
 
